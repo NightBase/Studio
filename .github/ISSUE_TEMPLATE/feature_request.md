@@ -1,20 +1,34 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+name: ✨ Feature Request
+description: Suggest an idea for this project
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
 
----
+- type: markdown
+  attributes:
+  value: |
+  Thanks for taking the time to fill out this feature request! 🤗
+  Please make sure this feature request hasn't been already submitted by someone by looking through other open/closed issues. 😃
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+- type: dropdown
+  attributes:
+  multiple: false
+  label: Type of Feature
+  description: Select the type of feature request.
+  options: - "✨ New Feature" - "📝 Documentation" - "🎨 Style and UI" - "🔨 Code Refactor" - "⚡ Performance Improvements" - "✅ New Test"
+  validations:
+  required: true
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+- type: textarea
+  id: description
+  attributes:
+  label: Description
+  description: Give us a brief description of the feature or enhancement you would like
+  validations:
+  required: true
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+- type: textarea
+  id: additional-information
+  attributes:
+  label: Additional Information
+  description: Give us some additional information on the feature request like proposed solutions, links, screenshots, etc.
