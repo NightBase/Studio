@@ -7,7 +7,7 @@
 @import url(https://fonts.googleapis.com/css?family=Exo:100);
 
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
-$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAAAAAAAAAg2PpwAAAAAN0Uk5T/wBu7uS8bAAAACJJREFUeJxjkFqFAA0MrqEIEMAwFYmXMMob5Q04zws5tQIAarHs4RFYJekAAAAASUVORK5CYII=";
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAAAAAAAAAg2PpwAAAAAN0Uk5T/wBNTIPNHgAAAB9JREFUeJxjkFqFAA0MrqEIkMAwdZQ3yhtUPC/k1AoAlMHs8bO82AYAAAAASUVORK5CYII=";
 $bg-width: 50px;
 $bg-height: 50px;
 
