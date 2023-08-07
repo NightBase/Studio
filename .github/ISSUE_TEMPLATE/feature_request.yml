@@ -12,7 +12,7 @@ body:
   - type: dropdown
     attributes:
       multiple: false
-      label: Type of Feature
+      label: Type of Enhancement
       description: Select the type of feature request.
       options:
         - "✨ New Feature"
@@ -21,6 +21,7 @@ body:
         - "🔨 Code Refactor"
         - "⚡ Performance Improvements"
         - "✅ New Test"
+        - "Other"
     validations:
       required: true
 
