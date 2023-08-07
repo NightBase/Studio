@@ -1,9 +1,4 @@
 <css lang="scss">
-/* Cool infinite background scrolling animation.
- * Twitter: @kootoopas
- */
-
-/* Exo thin font from Google. */
 @import url(https://fonts.googleapis.com/css?family=Exo:100);
 
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
