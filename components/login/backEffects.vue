@@ -1,11 +1,7 @@
-<css lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Exo:100);
-
-/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+<style scoped lang="scss">
 $bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAgMAAABjUWAiAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAAAAAAAAAg2PpwAAAAAN0Uk5T/wBNTIPNHgAAAB9JREFUeJxjkFqFAA0MrqEIkMAwdZQ3yhtUPC/k1AoAlMHs8bO82AYAAAAASUVORK5CYII=";
 $bg-width: 50px;
 $bg-height: 50px;
-
 /* Animations */
 @-webkit-keyframes bg-scrolling-reverse {
   100% {
@@ -61,7 +57,7 @@ $bg-height: 50px;
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
 }
-</css>
+</style>
 <template>
   <div class="overflow-hidden">
     <div class="w-screen h-screen absolute square-animation" />
