@@ -21,9 +21,11 @@ input:-webkit-autofill {
         class="text-zinc-700 w-8 h-8 group-focus-within:text-violet-500/80 transition-colors duration-150"
       />
       <input
-        v-model="inputValue"
+        v-model="value"
         :type="inputType"
         :placeholder="placeholder"
+        @input="emit('update:modelValue', value)"
+        autocomplete="off"
         class="placeholder-zinc-600 text-white text-md p-1 ring-0 outline-none bg-zinc-800 w-full h-full"
       />
       <button v-if="isPassword" @click="togglePassVisibility" type="button">
@@ -51,8 +53,9 @@ const props = defineProps({
     required: false,
     default: false,
   },
+  value: String,
 });
-const inputValue = ref("");
+const value = ref(props.value);
 
 const passVisibility = ref(props.isPassword);
 const eyeIcon = computed(() => {
@@ -64,4 +67,6 @@ function togglePassVisibility() {
 const inputType = computed(() => {
   return passVisibility.value ? "password" : "text";
 });
+
+const emit = defineEmits();
 </script>
