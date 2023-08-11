@@ -4,7 +4,7 @@
       class="bg-zinc-900 border border-zinc-800 w-full h-3 rounded-full flex items-center"
     >
       <div
-        class="bg-violet-500 h-2 rounded-full transition-all duration-300"
+        class="h-2 rounded-full transition-all duration-300"
         :style="{
           width: `${strengthPercent}%`,
           backgroundColor: strengthColor,
@@ -18,12 +18,20 @@
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits();
 const props = defineProps({
   password: {
     type: String,
     required: true,
   },
 });
+
+watch(
+  () => props.password,
+  () => {
+    emit("update:modelValue", strength.value);
+  }
+);
 
 const strength = computed(() => {
   if (props.password.length < 8) return "Weak";
@@ -54,6 +62,8 @@ const strengthColor = computed(() => {
       return "#fcf14c";
     case PasswordStrength.Strong:
       return "#81fc4c";
+    case PasswordStrength.SuperStrong:
+      return "#4cfcf1";
   }
 });
 
@@ -61,6 +71,7 @@ enum PasswordStrength {
   Weak = "Weak",
   Moderate = "Medium",
   Strong = "Strong!",
+  SuperStrong = "Super Strong!!",
 }
 
 function checkPasswordStrength(password: string): PasswordStrength {
@@ -76,6 +87,7 @@ function checkPasswordStrength(password: string): PasswordStrength {
   const hasNumber = numberRegex.test(password);
   const hasSpecialChar = specialCharRegex.test(password);
 
+  let strength = PasswordStrength.Weak;
   if (
     hasLength &&
     hasLowercase &&
@@ -83,13 +95,14 @@ function checkPasswordStrength(password: string): PasswordStrength {
     hasNumber &&
     hasSpecialChar
   ) {
-    return PasswordStrength.Strong;
+    strength = PasswordStrength.Strong;
+  } else if (hasLength && ((hasLowercase && hasUppercase) || hasSpecialChar)) {
+    strength = PasswordStrength.Moderate;
+  }
+  if (strength === PasswordStrength.Strong && password.length > 20) {
+    strength = PasswordStrength.SuperStrong;
   }
 
-  if (hasLength && ((hasLowercase && hasUppercase) || hasSpecialChar)) {
-    return PasswordStrength.Moderate;
-  }
-
-  return PasswordStrength.Weak;
+  return strength;
 }
 </script>
