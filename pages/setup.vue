@@ -6,7 +6,7 @@
     <div class="flex justify-center items-center w-full h-full">
       <div class="flex items-center justify-center flex-col relative">
         <div class="flex flex-col py-20 px-10 bg-zinc-800/60 rounded-xl">
-          <div class="flex mb-8 flex-col">
+          <div class="flex mb-3 flex-col">
             <div class="flex justify-center items-center mb-8">
               <img
                 src="/logo.png"
@@ -25,22 +25,35 @@
               >
             </div>
           </div>
+          <div class="mb-3">
+            <span class="text-red-500 text-xs" v-if="errorVisibility">
+              {{ errorText }}
+            </span>
+          </div>
           <div class="w-full">
-            <form class="flex flex-col gap-y-5" autocomplete="off">
+            <form
+              class="flex flex-col gap-y-5"
+              autocomplete="off"
+              @submit.prevent="register"
+            >
               <LoginInput
                 placeholder="Username"
                 icon="material-symbols:person-2-rounded"
+                v-model="username"
               />
               <LoginInput
+                type="email"
                 placeholder="Email"
-                icon="material-symbols:person-2-rounded"
+                icon="material-symbols:mail"
+                v-model="email"
               />
               <LoginInput
                 placeholder="Password"
                 icon="uim:padlock"
                 isPassword
+                v-model="password"
               />
-              <div class="gap-y-2 flex flex-col">
+              <div class="gap-y-3 flex flex-col">
                 <LoginInput
                   placeholder="Re Enter Password"
                   icon="uim:padlock"
@@ -50,6 +63,7 @@
                 <UtilsPassStrengthMeter
                   v-if="meterVisibility"
                   :password="password2"
+                  v-model="passStrength"
                 />
               </div>
 
@@ -69,10 +83,42 @@
 
 <script setup lang="ts">
 const username = ref("");
+const email = ref("");
 const password = ref("");
 const password2 = ref("");
 
+const errorText = ref("");
+const errorVisibility = ref(false);
+
+const passStrength = ref("Weak");
 const meterVisibility = computed(() => {
   return password2.value.length > 3;
 });
+
+watch([password, password2], (newVal) => {
+  if (newVal[0].length < 8 && newVal[0].length) {
+    errorVisibility.value = false;
+    passStrength.value = "Weak";
+    return;
+  }
+  if (
+    password.value !== password2.value &&
+    (password.value.length > 3 || password2.value.length > 3)
+  ) {
+    errorVisibility.value = true;
+    errorText.value = "Passwords do not match";
+  } else {
+    errorVisibility.value = false;
+    passStrength.value = "Weak";
+  }
+});
+
+function register() {
+  errorVisibility.value = false;
+  if (passStrength.value !== "Medium") {
+    errorVisibility.value = true;
+    errorText.value = "Password is not strong enough";
+    return;
+  }
+}
 </script>
