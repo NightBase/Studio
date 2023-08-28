@@ -7,7 +7,7 @@
         "generate": "nuxt generate",
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
-        "lint": "eslint --ext .ts,.vue --ignore-path .gitignore ."
+        "linter": "eslint --ext .ts,.vue --ignore-path .gitignore ."
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.22.10",
