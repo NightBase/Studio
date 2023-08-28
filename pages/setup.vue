@@ -21,15 +21,20 @@
                     </div>
                     <div class="w-full">
                         <form class="flex flex-col gap-y-5" autocomplete="off" @submit.prevent="register">
-                            <LoginInput
+                            <LoginVInput
                                 v-model="username"
                                 placeholder="Username"
                                 icon="material-symbols:person-2-rounded"
                             />
-                            <LoginInput v-model="email" type="email" placeholder="Email" icon="material-symbols:mail" />
-                            <LoginInput v-model="password" placeholder="Password" icon="uim:padlock" is-password />
+                            <LoginVInput
+                                v-model="email"
+                                text-type="email"
+                                placeholder="Email"
+                                icon="material-symbols:mail"
+                            />
+                            <LoginVInput v-model="password" placeholder="Password" icon="uim:padlock" is-password />
                             <div class="gap-y-3 flex flex-col">
-                                <LoginInput
+                                <LoginVInput
                                     v-model="password2"
                                     placeholder="Re Enter Password"
                                     icon="uim:padlock"
@@ -87,7 +92,7 @@ watch([password, password2], (newVal) => {
 
 function register() {
     errorVisibility.value = false;
-    if (passStrength.value !== 'Medium') {
+    if (passStrength.value === 'Weak') {
         errorVisibility.value = true;
         errorText.value = 'Password is not strong enough';
     }

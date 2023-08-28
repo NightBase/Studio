@@ -24,12 +24,12 @@
                     </div>
                     <div class="w-full">
                         <form class="flex flex-col gap-y-5" autocomplete="off" @submit.prevent="handleLogin">
-                            <LoginInput
+                            <LoginVInput
                                 v-model="username"
                                 placeholder="Username or Email"
                                 icon="material-symbols:person-2-rounded"
                             />
-                            <LoginInput v-model="password" placeholder="Password" icon="uim:padlock" is-password />
+                            <LoginVInput v-model="password" placeholder="Password" icon="uim:padlock" is-password />
                             <button
                                 type="submit"
                                 class="mt-5 bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 rounded-full"
