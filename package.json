@@ -1,33 +1,33 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint . --fix"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.22.10",
-    "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^0.1.1",
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@types/node": "^18.17.1",
-    "@typescript-eslint/parser": "^6.4.1",
-    "eslint": "^8.47.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "nuxt": "^3.6.5",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "@nuxtjs/eslint-module": "^4.1.0",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt-icon": "^0.4.2",
-    "sass": "^1.64.2",
-    "scss": "^0.2.4"
-  }
+    "name": "nuxt-app",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "lint": "eslint --ext .ts,.vue --ignore-path .gitignore ."
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.22.10",
+        "@nuxt/devtools": "latest",
+        "@nuxt/eslint-config": "^0.1.1",
+        "@nuxtjs/eslint-config-typescript": "^12.0.0",
+        "@types/node": "^18.17.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "eslint": "^8.47.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "nuxt": "^3.6.5",
+        "prettier": "^3.0.2",
+        "typescript": "^5.1.6"
+    },
+    "dependencies": {
+        "@nuxtjs/eslint-module": "^4.1.0",
+        "@nuxtjs/tailwindcss": "^6.8.0",
+        "nuxt-icon": "^0.4.2",
+        "sass": "^1.64.2",
+        "scss": "^0.2.4"
+    }
 }
