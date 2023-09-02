@@ -15,6 +15,7 @@
         "@nuxt/eslint-config": "^0.1.1",
         "@nuxtjs/eslint-config-typescript": "^12.0.0",
         "@types/node": "^18.17.1",
+        "@types/pg": "^8.10.2",
         "@typescript-eslint/parser": "^6.4.1",
         "eslint": "^8.47.0",
         "eslint-config-prettier": "^9.0.0",
@@ -27,7 +28,10 @@
         "@nuxtjs/eslint-module": "^4.1.0",
         "@nuxtjs/tailwindcss": "^6.8.0",
         "nuxt-icon": "^0.4.2",
+        "pg": "^8.11.3",
+        "pg-hstore": "^2.3.4",
         "sass": "^1.64.2",
-        "scss": "^0.2.4"
+        "scss": "^0.2.4",
+        "sequelize": "^6.32.1"
     }
 }
