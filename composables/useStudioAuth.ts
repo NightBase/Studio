@@ -3,7 +3,7 @@ export const useStudioAuth = () => {
     const status = useState('studio:Auth', () => 'unauthenticated');
 
     async function login(identifier: string, password: string) {
-        const { data, error } = await useFetch<any>(API_URL + '/studio/login', {
+        const { data, error } = await useFetch<any>(API_URL + '/v1/auth/login', {
             method: 'POST',
             body: JSON.stringify({ identifier, password }),
         });
@@ -28,7 +28,7 @@ export const useStudioAuth = () => {
     }
 
     async function getUserData() {
-        const { data, error } = await useFetch<any>(API_URL + '/studio/user/', {
+        const { data, error } = await useFetch<any>(API_URL + '/v1/user/@me', {
             method: 'GET',
         });
         if (error.value) {
