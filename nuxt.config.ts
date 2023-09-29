@@ -12,7 +12,4 @@ export default defineNuxtConfig({
             DB_DATABASE: process.env.DB_DATABASE || 'nightbase',
         },
     },
-    nitro: {
-        plugins: ['@/plugins/server/DBSetup.ts'],
-    },
 });
