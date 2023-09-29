@@ -10,5 +10,7 @@
   },
   "extends": ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended", "plugin:prettier/recommended"],
   "plugins": [],
-  "rules": {}
+  "rules": {
+    "no-console": "off"
+  }
 }
